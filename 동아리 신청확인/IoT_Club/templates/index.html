@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel=" shortcut icon" href="{{ url_for('static', filename='Pink.ico') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Pink.ico') }}">
+    <title>사물인터넷학과 학생회 해랑</title>
+</head>
+
+<body>
+    <!-- Start your code here -->
+
+    <p style="font-size: 30px">사물인터넷학과 동아리 신청 확인페이지</p>
+
+
+    <form method="POST" action="/select">
+        이름: <input type="text" name="name" required pattern="[가-힣]+$" title="ex. 홍길동" /><br /><br />
+        학번: <input type="text" name="id" required pattern="[0-9]{8}" title="ex. 20210000" /><br /><br />
+        전화번호: <input type="text" name="phone" required pattern="[0-1]{3}[0-9]{4}[0-9]{4}" title="ex. 01012345678" /><br /><br />
+        <button type="submit">신청한 동아리 확인하기</button>
+    </form>
+    </br>
+  <div>
+      신청한 동아리  :  <a style="color:red;">{{resultData}}</a><br>
+  </div>
+  <pre>
+========================================
+ 현재 개설된 동아리 목록 (인원):
+ - 프리티(FreeIoT) (37/마감)
+ - AI(인공지능) (15)
+ - 축구동아리 (8)
+ - 프로그래밍 동아리 (12)
+ - 볼링동아리 (7, 회장 신청바람)
+========================================
+
+========================================
+ 에러나면 연락주세요: 010-5183-9428
+
+ 최근수정: 2020.05.20 20:50
+ 해킹하다 걸리면... 각오하세요 ㅎㅎ
+========================================
+    <!-- End your code here -->
+  </pre>
+</body>
+</html>
